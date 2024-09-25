@@ -1,62 +1,25 @@
 import 'package:flutter/material.dart';
 
-class AppPay extends StatelessWidget {
+class AppPay extends StatefulWidget {
   const AppPay({super.key});
+  @override
+  // ignore: library_private_types_in_public_api
+  _AppPayState createState() => _AppPayState();
+}
+
+class _AppPayState extends State<AppPay> {
+  // Add any state variables or methods here if needed
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80),
-        child: AppBar(
-          backgroundColor: const Color(0xFF1B76AB),
-          foregroundColor: Colors.white,
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(15))),
-          leading: Builder(
-            builder: (context) {
-              return Padding(
-                padding: const EdgeInsets.only(top: 20.0, left: 4),
-                child: IconButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/back');
-                    },
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      size: 22,
-                    ),
-                  ),
-              );
-            },
-            // Text center Invoices
-          ),
+    return const Scaffold(
+      // Custom Header
+      body: Center(
+        child: Text(
+          'App Pay Page', // Replace this with actual content
+          style: TextStyle(fontSize: 24), // Example styling
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: const Color(0xFF1B76AB),
-        unselectedItemColor: Colors.grey,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.receipt_long),
-            label: 'GST Filing',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.payment),
-            label: 'App Pay',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-      ),
-    
     );
   }
 }
